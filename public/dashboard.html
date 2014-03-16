@@ -10,6 +10,7 @@
 <meta name="description" content="protoRx is a prototype of a dynamic web-based patient medical record.">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="css/patient.css">
+<link rel="stylesheet" href="css/custom.css">
 <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar">
@@ -17,18 +18,19 @@
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-
-    <div class="fixed-header hide-for-small">
+<div class="wrapper">
+    <div class="fixed-header hide-for-small" id="nypcolor">
         <div class="row">
             <div class="eight columns navigation small-twelve">
                 <ul>
-                    <li><a href="#allergies">Allergies</a></li>
+                    <li><a href="#careplan">Care Plan</a></li>
+                    <li><a href="#careteam">Care Team</a></li>
                     <li><a href="#conditions">Conditions</a></li>
+                    <li><a href="#medications">Medications</a></li>
+                    <li><a href="#allergies">Diet</a></li>
                     <li><a href="#labs">Labs</a></li>
                     <li><a href="#immunizations">Vaccs</a></li>
-                    <li><a href="#medications">Meds</a></li>
                     <li><a href="#encounters">Encounters</a></li>
-                    <li><a href="#careteam">Care Plan</a></li>
                 </ul>
             </div>
             <div class="four columns accessibility hide-for-small" id="tour-access-links">
@@ -93,37 +95,85 @@
         </div>
     </section>
 
-    <!-- 03 ALLERGIES -->
-    <section class="allergies" id="allergies">
+     <!-- CARE PLAN -->
+    <section class="careplan" id="careteam">
         <div class="row">
             <div class="headline two columns">
                 <div class="panel">
-                    <h2 id="tour-allergies">Allergies</h2>
+                    <h2 id="tour-careplan">Care Plan</h2>
                 </div>
             </div>
-            <div class="listing ten columns lines">
-                <div class="content panel">
-                    <ul>
-                        <li class="alert">
-                            <a href="#encounter-5e5eab10-3aaa-11e2-81c1-0800200c9a66" class="line-item">
-                                <span class="severity severity-severe">Severe</span> 
-                                Shellfish
-                                <small class="reaction">anaphylactic shock</small>
-                            </a>
-                        </li>
-                        <li class="warn">
-                            <a href="#encounter-9faa1792-928d-40a5-8878-b24d408136e9" class="line-item">
-                                Ketoconazole
-                                <small class="reaction">dermatitis</small>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="calendar ten column">
+                    <div class="panel content">
+
+                        <div class="care-event">
+                            <div class="cal-date">
+                                <small>Thursday</small> Dec 13 <small>4:30 PM</small>
+                            </div>
+                            <div class="cal-detail">
+                                <h4>Office consultation</h4>
+                                <p>Asthma consultation &bull; <a href="#">Portland Clinic</a> &bull; Dr. George Potomac</p>
+                                <p><a href="#" class="button">Add to Calendar</a> &bull; <a href="#" class="button">Send to Care Team</a></p>
+                            </div>
+                        </div>
+
+                        <div class="care-event">
+                            <div class="cal-date">
+                                <small>Tuesday</small> Jan 22 <small>9:15 AM</small>
+                            </div>
+                            <div class="cal-detail">
+                                <h4>Neck surgery</h4>
+                                <p>Cease drinking and eating 12 hours before &bull; <a href="#">Riverside Hospital</a></p>
+                                <p><a href="#" class="button">Add to Calendar</a> &bull; <a href="#" class="button">Send to Care Team</a></p>
+                            </div>
+                        </div>
+
+                        <div class="care-event">
+                            <div class="cal-date">
+                                <small>Home Care</small> Jan 30 <small>Instructions</small>
+                            </div>
+                            <div class="cal-detail">
+                                <h4>Limit physical activity and do neck exercises</h4>
+                                <p>Post-surgery instructions</p>
+                                <p><a href="#" class="button">Add to Calendar</a> &bull; <a href="#" class="button">Send to Care Team</a></p>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- 04 CONDITIONS -->
+   <!-- CARE TEAM -->
+    <section class="careteam" id="careteam">
+        <div class="row">
+            <div class="headline two columns">
+                <div class="panel">
+                    <h2 id="tour-careteam">Care Team</h2>
+                </div>
+            </div>
+                <div class="contacts ten column">
+                    <div class="panel content">
+                        <div class="contact">
+                            <h4>Jake Dowell <small>Primary Physician</small></h4>
+                            <p>Methodist Hospital &bull; 651-222-1055 &bull; jdowell@methodist.example.org</p>
+                        </div>
+                        <div class="contact">
+                            <h4>Margret Wander <small>Physical Therapist</small></h4>
+                            <p>Methodist Hospital &bull; 651-222-1055 &bull; mwander@methodist.example.org</p>
+                        </div>
+                        <div class="contact">
+                            <h4>Niklas Backstrom <small>Father</small></h4>
+                            <p>Methodist Hospital &bull; 507-732-5299 &bull; nk1439backstrom@yahoo.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<!-- 04 CONDITIONS -->
     <section class="conditions" id="conditions">
         <div class="row">
             <div class="headline two columns">
@@ -212,341 +262,6 @@
                         <p><strong>Associated Medications: </strong> none</p>
                     </div>
                 </div><!-- /.timeline-event -->
-            </div>
-        </div>
-    </section>
-
-
-    <!-- CARE TEAM -->
-    <section class="careteam" id="careteam">
-        <div class="row">
-            <div class="headline two columns">
-                <div class="panel">
-                    <h2 id="tour-careteam">Care Team</h2>
-                </div>
-            </div>
-                <div class="contacts ten column">
-                    <div class="panel content">
-                        <div class="contact">
-                            <h4>Jake Dowell <small>Primary Physician</small></h4>
-                            <p>Methodist Hospital &bull; 651-222-1055 &bull; jdowell@methodist.example.org</p>
-                        </div>
-                        <div class="contact">
-                            <h4>Margret Wander <small>Physical Therapist</small></h4>
-                            <p>Methodist Hospital &bull; 651-222-1055 &bull; mwander@methodist.example.org</p>
-                        </div>
-                        <div class="contact">
-                            <h4>Niklas Backstrom <small>Father</small></h4>
-                            <p>Methodist Hospital &bull; 507-732-5299 &bull; nk1439backstrom@yahoo.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CARE PLAN -->
-    <section class="careplan" id="careteam">
-        <div class="row">
-            <div class="headline two columns">
-                <div class="panel">
-                    <h2 id="tour-careplan">Care Plan</h2>
-                </div>
-            </div>
-                <div class="calendar ten column">
-                    <div class="panel content">
-
-                        <div class="care-event">
-                            <div class="cal-date">
-                                <small>Thursday</small> Dec 13 <small>4:30 PM</small>
-                            </div>
-                            <div class="cal-detail">
-                                <h4>Office consultation</h4>
-                                <p>Asthma consultation &bull; <a href="#">Portland Clinic</a> &bull; Dr. George Potomac</p>
-                                <p><a href="#" class="button">Add to Calendar</a> &bull; <a href="#" class="button">Send to Care Team</a></p>
-                            </div>
-                        </div>
-
-                        <div class="care-event">
-                            <div class="cal-date">
-                                <small>Tuesday</small> Jan 22 <small>9:15 AM</small>
-                            </div>
-                            <div class="cal-detail">
-                                <h4>Neck surgery</h4>
-                                <p>Cease drinking and eating 12 hours before &bull; <a href="#">Riverside Hospital</a></p>
-                                <p><a href="#" class="button">Add to Calendar</a> &bull; <a href="#" class="button">Send to Care Team</a></p>
-                            </div>
-                        </div>
-
-                        <div class="care-event">
-                            <div class="cal-date">
-                                <small>Home Care</small> Jan 22-30 <small>Instructions</small>
-                            </div>
-                            <div class="cal-detail">
-                                <h4>Limit physical activity and do neck exercises</h4>
-                                <p>Post-surgery instructions</p>
-                                <p><a href="#" class="button">Add to Calendar</a> &bull; <a href="#" class="button">Send to Care Team</a></p>
-                            </div>
-                        </div>
-
-                        <div class="clearfix"></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 05 LABS -->
-    <section class="labs" id="labs">
-        <div class="row">
-            <div class="headline two columns">
-                <div class="panel">
-                    <h2 id="tour-labs">Labs</h2>
-                </div>
-            </div>
-
-            <div class="content-container ten columns">
-                
-                <!-- Lab Result -->
-                <div class="panel content lab-result closed">
-                    <h3>Fasting Blood Glucose <small>two days ago</small></h3>
-                    <div class="graph-horizontal graph-horizontal-fbs">
-                        <div class="graph-horizontal-labels">
-                            <ul>
-                                <li style="width: 34%;"><strong>Normal</strong>: Fasting blood sugar in this range is normal.</li>
-                                <li style="width: 23%;"><strong>Elevated</strong>: Fasting blood sugar in the range of 101-125 mg/dL is a cause of concern for possible prediabetes and should be monitored.</li>
-                                <li style="width: 43%;"><strong>High</strong>: Fasting blood sugar above 126 mg/dL is an indicator of possible established diabetes.</li>
-                            </ul>
-                        </div>
-                        <span class="graph-horizontal-marker" style="left: 24%;">
-                            <span class="graph-result-label"><strong>84</strong> mg/dL</span>
-                        </span>
-                        <span class="graph-horizontal-previous graph-horizontal-previous-1" style="left: 31%;"></span>
-                        <span class="graph-horizontal-previous graph-horizontal-previous-2" style="left: 39%;"></span>
-                        <span class="graph-horizontal-previous graph-horizontal-previous-3" style="left: 44%;"></span>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>Trending analysis</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p>You are trending toward decreased fasting blood sugar measurements, and your current result is well within normal range.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>Lab details</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p>
-                                    Ordered by Dr. Sean Daley, North Memorial Medical Center<br />
-                                    November 30, 2012 — 1:42pm (<a href="#encounter-9faa1792-928d-40a5-8878-b24d408136e9">view encounter</a>)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>Physician notes</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p class="highlight padded">
-                                    Continue to exercise 3x/week.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>About this test</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p>
-                                    A lab glucose test measures the amount of glucose sugar in your blood.  This test measures after you’ve been fasting for at least eight hours.  It’s often the first check for prediabetes or diabetes.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /lab result -->
-
-                <!-- Lab Result -->
-                <div class="panel content lab-result closed">
-                    <h3>Cholesterol <small>four months ago</small></h3>
-                    <div class="lab-result-strip">
-                        <div class="lab-result nominal bg" style="width: 33%;">
-                            <h4>Cholesterol</h4>
-                        </div>
-                        <div class="lab-result warn bg" style="width: 34%;">
-                            <h4>Triglycerides</h4>
-                        </div>
-                        <div class="lab-result nominal bg" style="width: 33%">
-                            <h4>HDL Cholesterol</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="lab-result-strip interior">
-                            <div class="lab-result" style="width: 33%;">
-                                <div class="lab-result-numbers">
-                                    <strong>152</strong> mg/DL
-                                    <small>Standard Range: 0 - 200 mg/DL</small>
-                                </div>
-                                <div class="graph-horizontal-small graph-horizontal-fbs">
-                                    <span class="graph-horizontal-marker" style="left: 19%;"></span>
-                                </div>
-                            </div>
-                            <div class="lab-result" style="width: 34%;">
-                                <div class="lab-result-numbers">
-                                    <strong>151</strong> mg/DL
-                                    <small>Standard Range: 0 - 149 mg/DL</small>
-                                </div>
-                                <div class="graph-horizontal-small graph-horizontal-fbs">
-                                    <span class="graph-horizontal-marker" style="left: 33%;"></span>
-                                </div>
-                            </div>
-                            <div class="lab-result" style="width: 33%">
-                                <div class="lab-result-numbers">
-                                    <strong>43</strong> mg/DL
-                                    <small>Standard Range: 39+ mg/DL</small>
-                                </div>
-                                <div class="graph-horizontal-small graph-horizontal-hdl">
-                                    <span class="graph-horizontal-marker" style="left: 65%;"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>Trending analysis</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p>No prior lab results available for cholesterol.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>Lab details</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p>
-                                    Ordered by Dr. Pina Colada, University of Miami Hospital<br />
-                                    June 22, 2012 — 9:16am
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>Physician notes</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p class="highlight padded">
-                                    Triglycerides are slightly elevated. Limit fats and sugars, alcohol, and increase physical activity.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="three columns">
-                            <div class="panel">
-                                <h4>About this lab</h4>
-                            </div>
-                        </div>
-                        <div class="nine columns">
-                            <div class="panel">
-                                <p>
-                                    High cholesterol can raise your risk for heart disease, diabetes and stroke. Diet and lifestyle changes are the biggest factor in your cholesterol levels.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /lab result -->
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 06 IMMUNIZATIONS / VACCINATIONS -->
-    <section class="immunizations" id="immunizations">
-        <div class="row">
-            <div class="headline two columns">
-                <div class="panel">
-                    <h2>Vaccinations</h2>
-                </div>
-            </div>
-            <div class="ten column content table">
-                <div class="panel">
-
-                    <div class="action-banner alert bg">
-                        You are due for an influenza immunization, and you are almost due for a Tetanus-diphtheria immunization.  Contact your doctor to schedule these as soon as possible.
-                    </div>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Vaccination</td>
-                                <td>Vaccination Dates</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="alert">Influenza (<a href="http://www.cdc.gov/vaccines/vpd-vac/flu/default.htm" target="_blank">?</a>)</td>
-                                <td class="alert" id="tour-immunizations">Due Now</td>
-                            </tr>
-                            <tr>
-                                <td class="warn">TD Adult</td>
-                                <td><span class="warn">Due Soon</span>,  8/15/1998</td>
-                            </tr>
-                            <tr>
-                                <td>DTP</td>
-                                <td>4/6/1991</td>
-                            </tr>
-                            <tr>
-                                <td>Hep B Adult Vaccine 20mcg</td>
-                                <td>3/13/2001,  10/16/1998,  9/14/1998</td>
-                            </tr>
-                            <tr>
-                                <td>MMR (<a href="http://www.cdc.gov/vaccines/pubs/vis/downloads/vis-mmr.pdf" target="_blank">?</a>)</td>
-                                <td>7/24/1994</td>
-                            </tr>
-                            <tr>
-                                <td>Oral Polio Vaccine (<a href="http://www.cdc.gov/vaccines/vpd-vac/polio/default.htm" target="_blank">?</a>)</td>
-                                <td>5/8/1994</td>
-                            </tr>
-                            <tr>
-                                <td>Rabies (<a href="http://www.cdc.gov/vaccines/vpd-vac/rabies/default.htm" target="_blank">?</a>)</td>
-                                <td>2/29/2007,  2/24/2007,  2/21/2007</td>
-                            </tr>
-                            <tr>
-                                <td>Rabies IG (<a href="http://www.cdc.gov/vaccines/vpd-vac/rabies/default.htm" target="_blank">?</a>)</td>
-                                <td>2/21/2007,  2/21/2007,  2/21/2007,  2/21/2007</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
             </div>
         </div>
     </section>
@@ -815,6 +530,293 @@
         </div>
     </section>
 
+   
+    <!-- 03 ALLERGIES -->
+    <section class="allergies" id="allergies">
+        <div class="row">
+            <div class="headline two columns">
+                <div class="panel">
+                    <h2 id="tour-allergies">Diet</h2>
+                </div>
+            </div>
+            <div class="listing ten columns lines">
+                <div class="content panel">
+                    <ul>
+                        <li class="alert">
+                            <a href="#encounter-5e5eab10-3aaa-11e2-81c1-0800200c9a66" class="line-item">
+                                <span class="severity severity-severe">Severe</span> 
+                                Shellfish
+                                <small class="reaction">anaphylactic shock</small>
+                            </a>
+                        </li>
+                        <li class="warn">
+                            <a href="#encounter-9faa1792-928d-40a5-8878-b24d408136e9" class="line-item">
+                                Ketoconazole
+                                <small class="reaction">dermatitis</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 05 LABS -->
+    <section class="labs" id="labs">
+        <div class="row">
+            <div class="headline two columns">
+                <div class="panel">
+                    <h2 id="tour-labs">Labs</h2>
+                </div>
+            </div>
+
+            <div class="content-container ten columns">
+                
+                <!-- Lab Result -->
+                <div class="panel content lab-result closed">
+                    <h3>Fasting Blood Glucose <small>two days ago</small></h3>
+                    <div class="graph-horizontal graph-horizontal-fbs">
+                        <div class="graph-horizontal-labels">
+                            <ul>
+                                <li style="width: 34%;"><strong>Normal</strong>: Fasting blood sugar in this range is normal.</li>
+                                <li style="width: 23%;"><strong>Elevated</strong>: Fasting blood sugar in the range of 101-125 mg/dL is a cause of concern for possible prediabetes and should be monitored.</li>
+                                <li style="width: 43%;"><strong>High</strong>: Fasting blood sugar above 126 mg/dL is an indicator of possible established diabetes.</li>
+                            </ul>
+                        </div>
+                        <span class="graph-horizontal-marker" style="left: 24%;">
+                            <span class="graph-result-label"><strong>84</strong> mg/dL</span>
+                        </span>
+                        <span class="graph-horizontal-previous graph-horizontal-previous-1" style="left: 31%;"></span>
+                        <span class="graph-horizontal-previous graph-horizontal-previous-2" style="left: 39%;"></span>
+                        <span class="graph-horizontal-previous graph-horizontal-previous-3" style="left: 44%;"></span>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>Trending analysis</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p>You are trending toward decreased fasting blood sugar measurements, and your current result is well within normal range.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>Lab details</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p>
+                                    Ordered by Dr. Sean Daley, North Memorial Medical Center<br />
+                                    November 30, 2012 — 1:42pm (<a href="#encounter-9faa1792-928d-40a5-8878-b24d408136e9">view encounter</a>)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>Physician notes</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p class="highlight padded">
+                                    Continue to exercise 3x/week.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>About this test</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p>
+                                    A lab glucose test measures the amount of glucose sugar in your blood.  This test measures after you’ve been fasting for at least eight hours.  It’s often the first check for prediabetes or diabetes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /lab result -->
+
+                <!-- Lab Result -->
+                <div class="panel content lab-result closed">
+                    <h3>Cholesterol <small>four months ago</small></h3>
+                    <div class="lab-result-strip">
+                        <div class="lab-result nominal bg" style="width: 33%;">
+                            <h4>Cholesterol</h4>
+                        </div>
+                        <div class="lab-result warn bg" style="width: 34%;">
+                            <h4>Triglycerides</h4>
+                        </div>
+                        <div class="lab-result nominal bg" style="width: 33%">
+                            <h4>HDL Cholesterol</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="lab-result-strip interior">
+                            <div class="lab-result" style="width: 33%;">
+                                <div class="lab-result-numbers">
+                                    <strong>152</strong> mg/DL
+                                    <small>Standard Range: 0 - 200 mg/DL</small>
+                                </div>
+                                <div class="graph-horizontal-small graph-horizontal-fbs">
+                                    <span class="graph-horizontal-marker" style="left: 19%;"></span>
+                                </div>
+                            </div>
+                            <div class="lab-result" style="width: 34%;">
+                                <div class="lab-result-numbers">
+                                    <strong>151</strong> mg/DL
+                                    <small>Standard Range: 0 - 149 mg/DL</small>
+                                </div>
+                                <div class="graph-horizontal-small graph-horizontal-fbs">
+                                    <span class="graph-horizontal-marker" style="left: 33%;"></span>
+                                </div>
+                            </div>
+                            <div class="lab-result" style="width: 33%">
+                                <div class="lab-result-numbers">
+                                    <strong>43</strong> mg/DL
+                                    <small>Standard Range: 39+ mg/DL</small>
+                                </div>
+                                <div class="graph-horizontal-small graph-horizontal-hdl">
+                                    <span class="graph-horizontal-marker" style="left: 65%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>Trending analysis</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p>No prior lab results available for cholesterol.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>Lab details</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p>
+                                    Ordered by Dr. Pina Colada, University of Miami Hospital<br />
+                                    June 22, 2012 — 9:16am
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>Physician notes</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p class="highlight padded">
+                                    Triglycerides are slightly elevated. Limit fats and sugars, alcohol, and increase physical activity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three columns">
+                            <div class="panel">
+                                <h4>About this lab</h4>
+                            </div>
+                        </div>
+                        <div class="nine columns">
+                            <div class="panel">
+                                <p>
+                                    High cholesterol can raise your risk for heart disease, diabetes and stroke. Diet and lifestyle changes are the biggest factor in your cholesterol levels.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /lab result -->
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 06 IMMUNIZATIONS / VACCINATIONS -->
+    <section class="immunizations" id="immunizations">
+        <div class="row">
+            <div class="headline two columns">
+                <div class="panel">
+                    <h2>Vaccinations</h2>
+                </div>
+            </div>
+            <div class="ten column content table">
+                <div class="panel">
+
+                    <div class="action-banner alert bg">
+                        You are due for an influenza immunization, and you are almost due for a Tetanus-diphtheria immunization.  Contact your doctor to schedule these as soon as possible.
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Vaccination</td>
+                                <td>Vaccination Dates</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="alert">Influenza (<a href="http://www.cdc.gov/vaccines/vpd-vac/flu/default.htm" target="_blank">?</a>)</td>
+                                <td class="alert" id="tour-immunizations">Due Now</td>
+                            </tr>
+                            <tr>
+                                <td class="warn">TD Adult</td>
+                                <td><span class="warn">Due Soon</span>,  8/15/1998</td>
+                            </tr>
+                            <tr>
+                                <td>DTP</td>
+                                <td>4/6/1991</td>
+                            </tr>
+                            <tr>
+                                <td>Hep B Adult Vaccine 20mcg</td>
+                                <td>3/13/2001,  10/16/1998,  9/14/1998</td>
+                            </tr>
+                            <tr>
+                                <td>MMR (<a href="http://www.cdc.gov/vaccines/pubs/vis/downloads/vis-mmr.pdf" target="_blank">?</a>)</td>
+                                <td>7/24/1994</td>
+                            </tr>
+                            <tr>
+                                <td>Oral Polio Vaccine (<a href="http://www.cdc.gov/vaccines/vpd-vac/polio/default.htm" target="_blank">?</a>)</td>
+                                <td>5/8/1994</td>
+                            </tr>
+                            <tr>
+                                <td>Rabies (<a href="http://www.cdc.gov/vaccines/vpd-vac/rabies/default.htm" target="_blank">?</a>)</td>
+                                <td>2/29/2007,  2/24/2007,  2/21/2007</td>
+                            </tr>
+                            <tr>
+                                <td>Rabies IG (<a href="http://www.cdc.gov/vaccines/vpd-vac/rabies/default.htm" target="_blank">?</a>)</td>
+                                <td>2/21/2007,  2/21/2007,  2/21/2007,  2/21/2007</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
     <!-- ENCOUNTERS -->
     <section class="encounters" id="encounters">
         <div class="row">
@@ -890,8 +892,7 @@
 
     <div class="row disclaimer">
         <div class="twelve columns">
-            <p>protoRx prototype by <a href="https://tonywebster.com" title="Tony Webster | designer / developer" target="_blank">Tony Webster</a></p>
-            <p>Demonstration: does not represent an actual person or a real medical record</p>
+            <p>2014 New York Presbyterian Hospital</p>
         </div>
     </div>
 
@@ -938,27 +939,22 @@
         </li>
     </ol>
 
+    <div id="videosidebar">
+    <h1>Connect &amp; Learn</h1>
+    <!--<script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4341192&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4341192,100,133,'',1,1, 2358095, 0,1,0,'7bc377ad289b0aae0017cc81ce687638',9);</script>-->
+    <div id="robot"><script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4341192&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4341192,100,133,'',1,1, 2358095, 0,1,0,'b1e673ec066e07149ae267d963fb35f5',9);</script></div>
+    <div id="videogallery">
+
+    </div>
+</div>
+</div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.8.2.min.js"><\/script>')</script>
     <script src="js/foundation.min.js?2"></script>
     <script src="js/jquery.syncheight.js?2"></script>
     <script src="js/bootstrap-components.min.js?2"></script>
     <script src="js/app.min.js?3"></script>
-
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-36673574-1']);
-      _gaq.push(['_setDomainName', 'protorx.com']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
 
 </body>
 </html>
